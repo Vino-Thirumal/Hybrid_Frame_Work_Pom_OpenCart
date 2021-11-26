@@ -21,19 +21,19 @@ public class LoginPage {
 
 	private WebDriver driver;
 	private ElementUtils elementUtils;
-	private AccountPage accountsPage;
+	private AccountsPage accountsPage;
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		elementUtils = new ElementUtils(this.driver);
-		accountsPage = new AccountPage(driver);
+		accountsPage = new AccountsPage(driver);
 	}
 
 	public String getLoginPageTitle() {
 		return elementUtils.getPageTitle();
 	}
 
-	public AccountPage loginOpenCart(String uname, String pwd) {
+	public AccountsPage loginOpenCart(String uname, String pwd) {
 		elementUtils.doSendKeys(username, uname);
 		elementUtils.doSendKeys(password, pwd);
 		elementUtils.clickAnElement(login);
@@ -47,6 +47,5 @@ public class LoginPage {
 	public boolean forgottenPwdLinkExist() {
 		return elementUtils.isElementDisplayed(forgottenPwdLink);
 	}
-}
 
-	
+}

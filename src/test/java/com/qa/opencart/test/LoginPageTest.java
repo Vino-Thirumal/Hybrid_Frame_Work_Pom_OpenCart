@@ -1,10 +1,11 @@
 
 package com.qa.opencart.test;
 
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.qa.opencart.utils.ConstantUtils;
+import com.qa.opencart.utils.Constant;
 
 public class LoginPageTest extends BaseTest {
 
@@ -12,7 +13,7 @@ public class LoginPageTest extends BaseTest {
 	public void loginPageTitleTest() {
 		String loginPageTitle = loginPage.getLoginPageTitle();
 		System.out.println("Login Page Title " + loginPageTitle);
-		Assert.assertEquals(loginPageTitle, ConstantUtils.LOGIN_PAGE_TITLE);
+		Assert.assertEquals(loginPageTitle, Constant.LOGIN_PAGE_TITLE);
 	}
 
 	@Test(priority = 4)
@@ -28,5 +29,6 @@ public class LoginPageTest extends BaseTest {
 	@Test(priority = 3)
 	public void loginLinkTest() {
 		Assert.assertTrue(loginPage.loginLinkExist());
-		}
+
+	}
 }
